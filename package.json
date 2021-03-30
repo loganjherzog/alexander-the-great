@@ -1,0 +1,22 @@
+{
+  "name": "alexander-the-great",
+  "version": "1.0.0",
+  "description": "Alexander the Great social studies project",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/http-server/bin/http-server --p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loganjherzog/alexander-the-great.git"
+  },
+  "author": "Logan Herzog",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loganjherzog/alexander-the-great/issues"
+  },
+  "homepage": "https://github.com/loganjherzog/alexander-the-great#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
