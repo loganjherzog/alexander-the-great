@@ -1,0 +1,40 @@
+
+body {
+    font-family: comic sans;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    color: white;
+    background-color: #595959;
+    font-size: 48px;
+    height: 60px;
+    text-align: center;
+}
+
+.container {
+    margin: 0 20px;
+}
+
+.image-container {
+    margin: 20px 20px 0;
+}
+
+.image {
+    background-color: white;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    
+}
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-circle {
+    border-radius: 50%;
+}
