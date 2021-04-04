@@ -5,13 +5,12 @@ body {
     margin: 0;
 }
 
-.header {
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     background-color: #595959;
-    font-size: 30px;
     height: 60px;
     text-align: center;
     position: fixed;
@@ -20,7 +19,141 @@ body {
     width: 100%
 }
 
-.menu {
+.logo {
+    font-size: 30px;
+}
+
+/* Button styling */
+.menu-toggle {
+    position: absolute;
+    left: 0;
+}
+
+.menu-toggle span {
+    display: inline-block;
+    padding: 12px 15px;
+    line-height: 32px;
+    font-size: 32px;
+    color: white;
+}
+  
+.menu-toggle span:hover,
+.menu-toggle span:focus {
+    color: black;
+}
+  
+/*
+   Default styles + Mobile first
+   Offscreen menu style
+*/
+.main-menu {
+    position: absolute;
+    display: none;
+    left: -200px;
+    top: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+    transition: left 0.3s ease,
+          box-shadow 0.3s ease;
+    z-index: 999;
+}
+  
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 51px 0 0;
+    /* Hide shadow w/ -8px while 'closed' */
+    -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+       -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+            box-shadow: -8px 0 8px rgba(0,0,0,.5);
+    min-height: 100%;
+    width: 200px;
+    background: white;
+}
+  
+.main-menu a {
+    display: block;
+    padding: 12px 15px;
+    line-height: 16px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #595959;
+}
+  
+.main-menu li:first-child a {
+    border-top: 1px solid #595959;
+}
+  
+.main-menu a:hover,
+.main-menu a:focus {
+    background: #595959;
+    color: white;
+    text-decoration: none;
+}
+  
+.main-menu .menu-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*
+ On small devices, allow it to toggle...
+*/
+/*
+ :target for non-JavaScript
+ [aria-expanded] will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+  -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
+
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
+
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+}
+
+/* 
+ We could us `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop{
+  position: absolute;
+  display: block;  
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: #000;
+  background: rgba(0,0,0,.85);
+  cursor: default;
+}
+
+@supports (position: fixed) {
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop{
+    position: fixed;
+  }
+}
+
+.toc {
     position: fixed;
     top: 60px;
     right: 0;
@@ -28,15 +161,15 @@ body {
     display: none;
 }
 
-.menu ul {
+.toc ul {
     list-style-type: none;
 }
 
-.menu ul li {
+.toc ul li {
     padding-bottom: 8px;
 }
 
-.menu ul li a {
+.toc ul li a {
     font-size: 14px;
 }
 
@@ -107,7 +240,7 @@ a:active {
 }
 
 @media only screen and (min-width: 600px) {
-    .header {
+    .logo {
         font-size: 48px;
     }
 
@@ -121,8 +254,12 @@ a:active {
         margin: 0 200px;
     }
 
-    .menu {
+    .toc {
         display: block;
+    }
+
+    .menu-toggle {
+        display: none;
     }
 }
 

@@ -3,13 +3,32 @@
     <head>
         <title>Alexander the Great</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div class="header">
-            <div>Alexander the Great</div>
-        </div>
-        <aside class="menu">
+        <header>
+            <a href="#main-menu" class="menu-toggle">
+                <span class="material-icons">menu</span>
+            </a>
+            
+            <h1 class="logo">Alexander the Great</h1>
+            
+            <nav id="main-menu" class="main-menu">
+                <a href="#main-menu-toggle" class="menu-close">
+                    <span class="material-icons">close</span>
+                </a>
+                <ul>
+                    <li><a href="#childhood">Childhood</a></li>
+                    <li><a href="#ruler-life">Ruler Life</a></li>
+                    <li><a href="#greek-influence">Greek Influence</a></li>
+                    <li><a href="#conquests">Conquests</a></li>
+                    <li><a href="#death">Death</a></li>
+                </ul>
+            </nav>
+            <a href="#main-menu-toggle" class="backdrop" hidden></a>
+        </header>
+        <aside class="toc">
             <ul>
                 <li><a href="#childhood">Childhood</a></li>
                 <li><a href="#ruler-life">Ruler Life</a></li>
@@ -75,4 +94,3 @@
         </section>
     </body>
 </html>
-    
