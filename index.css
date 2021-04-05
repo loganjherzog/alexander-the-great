@@ -105,7 +105,7 @@ header {
 /*
  :target for non-JavaScript
  [aria-expanded] will be used if/when JavaScript is added to improve interaction, though it's completely optional.
-*/
+*/  
 .main-menu:target,
 .main-menu[aria-expanded="true"] {
   display: block;
