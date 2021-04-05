@@ -183,20 +183,9 @@ header {
     margin: 80px 20px 20px 0;
 }
 
-.image-map {
-    width: 100%;
-}
-
-
-.image-war {
-    width: 100%;
-}
-
-
-.image-tomb {
-    width: 100%;
-}
-
+.image-map,
+.image-war,
+.image-tomb,
 .image-influence {
     width: 100%;
 }
